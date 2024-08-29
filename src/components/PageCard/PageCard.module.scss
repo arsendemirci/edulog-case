@@ -1,0 +1,33 @@
+.main {
+  width: 100%;
+  padding-bottom: 40px;
+  max-width: $pageMaxWidth;
+  margin-top: $pageMarginTop;
+  box-shadow: $boxShadow;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid gray;
+  background-color: white;
+
+  margin-bottom: 120px;
+
+  .wrapper {
+    border-radius: 10px;
+    .header {
+      //   @include getBrandBg(right, $bg-gradient-primary);
+      text-transform: capitalize;
+      padding: 10px;
+      color: white;
+      border-bottom: 1px solid black;
+      font-size: large;
+      font-weight: 600;
+      text-shadow: 0 0 20px BLACK;
+    }
+    .body {
+      width: 100%;
+      background-color: white;
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+  }
+}
