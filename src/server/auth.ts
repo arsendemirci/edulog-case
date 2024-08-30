@@ -27,7 +27,7 @@ export const authOptions: NextAuthOptions = {
       if (url.startsWith("/")) return `${baseUrl}${url}`;
       // // Allows callback URLs on the same origin
       else if (new URL(url).origin === baseUrl) return url;
-      return url;
+      return baseUrl;
     },
   },
   pages: {
