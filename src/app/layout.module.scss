@@ -1,0 +1,25 @@
+.bg {
+  z-index: -1;
+  position: fixed;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include getBrandBg(center, rgb(73, 73, 73), 2, cover);
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 100%;
+
+  > main {
+    min-width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

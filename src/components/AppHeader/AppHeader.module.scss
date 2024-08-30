@@ -1,0 +1,124 @@
+@mixin fixHeader {
+  @include getBrandBg(center, $bg-gradient-primary);
+  border: 0.14em solid rgb(0 0 0 / 67%);
+  border-top: none;
+  box-shadow: 0 5px 15px #80808087;
+  color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  .navigation {
+    a::after {
+      background-color: white;
+    }
+  }
+  h1 {
+    text-shadow: 6px 6px 5px rgb(26, 26, 26);
+  }
+}
+.main {
+  transition: all 0.15s ease;
+  position: fixed;
+  box-sizing: content-box;
+  z-index: 8;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: $bodyMaxWidth;
+
+  &.fixed {
+    @include fixHeader;
+  }
+  * {
+    transition: all 0.2s ease-in-out;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    width: 100%;
+    gap: 30px;
+    h1 {
+      white-space: nowrap;
+    }
+    .session {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+  }
+  .navigation {
+    float: right;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+    ul {
+      display: block;
+      padding: 0;
+      margin: 0;
+      white-space: nowrap;
+      li {
+        display: inline-block;
+
+        position: relative;
+        padding: 0;
+        text-align: center;
+        a {
+          background: none;
+          border: none;
+          cursor: pointer;
+          display: block;
+          position: relative;
+          padding: 8px 0;
+          margin: 16px 24px 0 24px;
+          text-align: center;
+          color: inherit;
+          font-size: 18px;
+          line-height: 1;
+          font-weight: 600;
+          position: relative;
+          text-decoration: none;
+          outline: none;
+          opacity: 0.9;
+          min-width: 50px;
+          user-select: none;
+          &.active {
+            cursor: default;
+          }
+          &:hover,
+          &.active {
+            opacity: 1;
+            transform: perspective(60px) translateY(-5px) rotateX(-20deg)
+              scale(1.2);
+            &:after {
+              width: 50px;
+            }
+          }
+          &:after {
+            display: block;
+            content: "";
+            width: 0;
+            height: 3px;
+            margin: 8px auto 0 auto;
+            border-radius: 50% / 50%;
+            -webkit-transition: all 0.15s ease-in-out;
+            -moz-transition: all 0.15s ease-in-out;
+            -o-transition: all 0.15s ease-in-out;
+            -ms-transition: all 0.15s ease-in-out;
+            transition: all 0.15s ease-in-out;
+          }
+        }
+        .routeLink {
+          visibility: hidden;
+          display: none;
+        }
+      }
+    }
+  }
+}

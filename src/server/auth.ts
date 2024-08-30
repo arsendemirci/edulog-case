@@ -22,7 +22,7 @@ export const authOptions: NextAuthOptions = {
     },
   },
   pages: {
-    signIn: "/patient", //(4) custom signin page path
+    signIn: "/patients", //(4) custom signin page path
   },
   providers: [
     Credentials({
