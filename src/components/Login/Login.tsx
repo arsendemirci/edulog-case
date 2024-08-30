@@ -36,7 +36,7 @@ export default function Login() {
     await signIn("credentials", {
       username: inputs.username,
       password: inputs.password,
-      callbackUrl: `${process.env.NEXTAUTH_URL}/patients`,
+      callbackUrl: "/patients",
     }).then((res) => console.log("server respoonse", res));
   };
   return (

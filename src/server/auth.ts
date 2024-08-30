@@ -20,15 +20,6 @@ export const authOptions: NextAuthOptions = {
       session.user.id = token.userId; //(3)
       return session;
     },
-    async redirect({ url, baseUrl }) {
-      console.log("url", url);
-      console.log("baseUrl", url);
-      // Allows relative callback URLs
-      if (url.startsWith("/")) return `${baseUrl}${url}`;
-      // // Allows callback URLs on the same origin
-      else if (new URL(url).origin === baseUrl) return url;
-      return baseUrl;
-    },
   },
   pages: {
     signIn: "/login", //(4) custom signin page path
