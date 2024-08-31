@@ -3,6 +3,7 @@ import { signIn } from "next-auth/react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import style from "./Login.module.scss";
 import { LockOutlined } from "@mui/icons-material";
+import { redirect } from "next/navigation";
 import {
   Container,
   CssBaseline,
@@ -36,8 +37,10 @@ export default function Login() {
     await signIn("credentials", {
       username: inputs.username,
       password: inputs.password,
-      callbackUrl: "/patients",
-    }).then((res) => console.log("server respoonse", res));
+      callbackUrl: `/patients`,
+    }).then((res) => {
+      console.log("server respoonse", res);
+    });
   };
   return (
     <div className={style.wrapper}>

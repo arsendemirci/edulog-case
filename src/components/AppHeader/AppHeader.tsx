@@ -17,7 +17,9 @@ const AppHeader: React.FC = () => {
   const ref = useRef<any | null[]>([]);
   const pushRef = (el: any | null) => ref.current.push(el!);
   const handleLogout = async () => {
-    await signOut();
+    await signOut({
+      callbackUrl: "/login",
+    });
   };
   const goTo = (path: string) => {
     ctx.setPath(path);
