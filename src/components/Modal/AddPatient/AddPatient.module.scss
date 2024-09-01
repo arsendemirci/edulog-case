@@ -1,0 +1,26 @@
+.wrapper {
+  padding: 20px;
+  width: 65%;
+  margin: 0 auto;
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .formcontrol {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 18px;
+      flex-wrap: nowrap;
+      img {
+        top: 14px;
+        position: relative;
+      }
+    }
+    .formaction {
+      button {
+        float: right;
+      }
+    }
+  }
+}

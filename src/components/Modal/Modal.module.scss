@@ -1,0 +1,81 @@
+$modalIndex: 9;
+@mixin icon-button {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.23s ease;
+  transform: scale(1);
+  border-radius: 50%;
+  color: rgb(205, 205, 205);
+  background: rgb(82, 82, 82);
+  &:not(.disabled) {
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 3px 3px 8px rgba(128, 128, 128, 0.559);
+      color: rgb(255, 255, 255);
+      background: rgb(49, 49, 49);
+    }
+    cursor: pointer;
+  }
+  &.disabled {
+    pointer-events: none;
+    background: #ebebebf5;
+    color: #a3a3a3;
+  }
+}
+.backdrop {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.459);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-in-out;
+  &.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+.modalwrap {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  background: transparent;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $modalIndex;
+  justify-content: center;
+  pointer-events: none;
+  &.open {
+    pointer-events: all;
+  }
+}
+.modal {
+  z-index: $modalIndex;
+  transform: perspective(1200px) rotateX(90deg) scale(0);
+  background: white;
+  width: 80%;
+  max-width: 1200px;
+  left: 50%;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  border-radius: 20px;
+  &.open {
+    opacity: 1;
+    transform: perspective(1200px) rotateX(0deg) scale(1);
+  }
+  .buttonclose {
+    z-index: 2;
+    right: 10px;
+    top: 10px;
+    position: absolute;
+    @include icon-button;
+  }
+}

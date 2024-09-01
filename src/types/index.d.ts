@@ -12,3 +12,9 @@ export interface PatientType {
   complaint: string;
   diagnose?: string;
 }
+export interface AddPatientFormType {
+  firstName: string;
+  lastName: string;
+  age: string;
+  complaint: string;
+}
