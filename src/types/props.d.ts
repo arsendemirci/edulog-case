@@ -10,6 +10,7 @@ export interface PageCardProps {
 export interface ButtonProps {
   children: ReactNode;
   onClick: MouseEventHandler<HTMLButtonElement>;
+  className?: string;
 }
 
 export interface AppHeaderProps {
