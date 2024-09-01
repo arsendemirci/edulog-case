@@ -26,12 +26,7 @@ export interface AuthProviderProps {
 export interface StoreProviderProps {
   children: React.ReactNode;
 }
-export interface AppLinkProps {
-  href: Url | UrlObject;
-  replace?: Boolean;
-  scroll?: Boolean;
-  prefetch?: Boolean | null;
-  className?: string;
-  children?: ReactNode;
-  onClick?: MouseEventHandler<HTMLAnchorElement>;
+export interface NavLinkProps {
+  link: { href: string; name: string };
+  isActive: boolean;
 }

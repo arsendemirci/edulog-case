@@ -6,11 +6,6 @@
   color: white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  .navigation {
-    a::after {
-      background-color: white;
-    }
-  }
   h1 {
     text-shadow: 6px 6px 5px rgb(26, 26, 26);
   }
@@ -47,78 +42,6 @@
       display: flex;
       gap: 20px;
       align-items: center;
-    }
-  }
-  .navigation {
-    float: right;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    svg {
-      width: 36px;
-      height: 36px;
-    }
-    ul {
-      display: block;
-      padding: 0;
-      margin: 0;
-      white-space: nowrap;
-      li {
-        display: inline-block;
-
-        position: relative;
-        padding: 0;
-        text-align: center;
-        a {
-          background: none;
-          border: none;
-          cursor: pointer;
-          display: block;
-          position: relative;
-          padding: 8px 0;
-          margin: 16px 24px 0 24px;
-          text-align: center;
-          color: inherit;
-          font-size: 18px;
-          line-height: 1;
-          font-weight: 600;
-          position: relative;
-          text-decoration: none;
-          outline: none;
-          opacity: 0.9;
-          min-width: 50px;
-          user-select: none;
-          &.active {
-            cursor: default;
-          }
-          &:hover,
-          &.active {
-            opacity: 1;
-            transform: perspective(60px) translateY(-5px) rotateX(-20deg)
-              scale(1.2);
-            &:after {
-              width: 50px;
-            }
-          }
-          &:after {
-            display: block;
-            content: "";
-            width: 0;
-            height: 3px;
-            margin: 8px auto 0 auto;
-            border-radius: 50% / 50%;
-            -webkit-transition: all 0.15s ease-in-out;
-            -moz-transition: all 0.15s ease-in-out;
-            -o-transition: all 0.15s ease-in-out;
-            -ms-transition: all 0.15s ease-in-out;
-            transition: all 0.15s ease-in-out;
-          }
-        }
-        .routeLink {
-          visibility: hidden;
-          display: none;
-        }
-      }
     }
   }
 }

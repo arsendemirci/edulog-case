@@ -1,0 +1,49 @@
+.anchor {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding: 8px 0;
+  margin: 16px 24px 0 24px;
+  text-align: center;
+  color: inherit;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 600;
+  position: relative;
+  text-decoration: none;
+  outline: none;
+  opacity: 0.9;
+  min-width: 50px;
+  user-select: none;
+  &.active {
+    cursor: default;
+  }
+  &:hover,
+  &.active {
+    opacity: 1;
+    transform: perspective(60px) translateY(-5px) rotateX(-20deg) scale(1.2);
+    &:after {
+      width: 50px;
+    }
+  }
+  &:after {
+    background-color: white;
+    display: block;
+    content: "";
+    width: 0;
+    height: 3px;
+    margin: 8px auto 0 auto;
+    border-radius: 50% / 50%;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    -ms-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+  }
+}
+.routeLink {
+  visibility: hidden;
+  display: none;
+}
